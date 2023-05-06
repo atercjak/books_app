@@ -2,7 +2,7 @@
 
 <nav class="navbar" style="background-color: cadetblue">
     <div class="container">
-        <a class="navbar-brand" href="{% url 'books:home' %}">
+        <a class="navbar-brand" href="{% url 'Home:home' %}">
             <img src="{% static 'images/books.svg' %}" class="logo" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -12,27 +12,15 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'books:home' %}">Strona Główna</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'Home:home' %}">Strona Główna</a>
                 </li>
-                {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">{{ user.username }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'users:logout' %}">Wyloguj</a>
-                    </li>
-
-                {% else %}
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'users:registration' %}">Rejestracja</a>
+                    <a class="nav-link active" aria-current="page" href="#">Rejestracja</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'users:login' %}">Logowanie</a>
+                    <a class="nav-link active" aria-current="page" href="#">Logowanie</a>
                 </li>
-
-                 {% endif %}
-
             </ul>
         </div>
     </div>
