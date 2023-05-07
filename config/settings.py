@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
     'Home.apps.HomeConfig',
     'Users.apps.UsersConfig',
+    'Books.apps.BooksConfig',
 
     'crispy_forms',
     'crispy_bootstrap5',
