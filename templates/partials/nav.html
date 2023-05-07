@@ -14,13 +14,25 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{% url 'Home:home' %}">Strona Główna</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Rejestracja</a>
-                </li>
+                {% if user.is_authenticated %}
 
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Logowanie</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">{{ user.username }}</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'Users:logout' %}">Wyloguj się</a>
+                    </li>
+
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'Users:register' %}">Rejestracja</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'Users:login' %}">Logowanie</a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
     </div>
