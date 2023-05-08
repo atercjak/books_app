@@ -24,6 +24,12 @@
                         <a class="nav-link active" aria-current="page" href="{% url 'Users:logout' %}">Wyloguj się</a>
                     </li>
 
+                    {% if user.is_superuser %}
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Dodaj książki do bazy danych</a>
+                        </li>
+                    {% endif %}
+
                 {% else %}
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'Users:register' %}">Rejestracja</a>
