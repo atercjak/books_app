@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from . import forms
 from django.contrib.auth import authenticate, login, logout
+from django.views.generic import ListView
+from . import models
 
 
 # Create your views here.
@@ -42,3 +44,12 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect(reverse_lazy('Home:home'))
+
+
+def account_view(request):
+    return render(request, 'Users/account_details.html')
+
+
+
+
+

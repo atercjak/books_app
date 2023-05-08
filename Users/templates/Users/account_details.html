@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block container %}
+
+    {% if user.is_authenticated %}
+
+        <h2>Witaj {{ user.username }}</h2>
+        <div class="row">
+            <div class="col-md-9">
+                <button type="submit" class="btn btn-warning">Wprowadź zmiany</button>
+                <button type="submit" class="btn btn-danger">Usuń konto</button>
+            </div>
+
+        </div>
+    {% endif %}
+{% endblock %}
