@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+
+{% block container %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="my_file">
+        <button type="submit">Wyślij</button>
+    </form>
+
+
+{% endblock %}

@@ -13,8 +13,8 @@ class Category(models.Model):
 
 
 class Book(models.Model):
-    author = models.CharField(max_length=150, null=True)
-    title = models.CharField(max_length=150, null=True)
+    author = models.TextField(null=True)
+    title = models.TextField(null=True)
     categories = models.ManyToManyField(Category, related_name='categories')
 
     def __str__(self):
