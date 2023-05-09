@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from tablib import Dataset
 from .models import Book
+from . import forms
 
 
 def upload_library(request):
@@ -21,3 +22,14 @@ def upload_library(request):
         return render(request, 'Books/make-library.html')
 
     return redirect(reverse_lazy('Home:home'))
+
+
+def add_book(request):
+    form = forms.BookAddForm(request.POST or None)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+        else:
+            return render(request, 'Books/make-library.html', {'form': form})
+        return redirect(reverse_lazy('Home:home'))
+    return render(request, 'Books/make-library.html', {'form': form})

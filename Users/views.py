@@ -1,9 +1,7 @@
 from django.shortcuts import render, redirect
-from django.urls import reverse_lazy, reverse
+from django.urls import reverse_lazy
 from . import forms
 from django.contrib.auth import authenticate, login, logout
-from django.views.generic import ListView
-from . import models
 
 
 # Create your views here.
