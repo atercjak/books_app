@@ -7,9 +7,12 @@
         <h2>Witaj {{ user.username }}</h2>
         <div class="row">
             <div class="col-md-9">
+                Nazwa użytkownika: <input type="text" id="username" value="{{ user.username }}"> <br>
+                E-mail: <input disabled type="text" id="email" value="{{ user.email }}"> <br>
                 <button type="submit" class="btn btn-warning">Wprowadź zmiany</button>
                 <button type="submit" class="btn btn-danger">Usuń konto</button>
             </div>
+
 
         </div>
     {% endif %}
