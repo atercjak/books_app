@@ -30,6 +30,6 @@ def add_book(request):
         if form.is_valid():
             form.save()
         else:
-            return render(request, 'Books/make-library.html', {'form': form})
+            return render(request, 'Books/add-book.html', {'form': form})
         return redirect(reverse_lazy('Home:home'))
-    return render(request, 'Books/make-library.html', {'form': form})
+    return render(request, 'Books/add-book.html', {'form': form})

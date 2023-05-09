@@ -17,12 +17,16 @@
             </div>
 
             {% if user.is_superuser %}
-                <div class="card" style="width: 13rem;">
+                <div class="card" style="width: 15rem;">
                     <img src="{% static 'images/library-icon.svg' %}" class="card-img-top" alt="library"
                          style="width: 10rem; height: 10rem; text-align: center; margin: auto">
                     <div class="card-body" style="text-align: center; margin: auto">
-                        <h5 class="card-title">Biblioteka</h5>
-                        <a href="{% url 'Books:upload_library' %}" class="btn btn-primary">Dodaj książki</a>
+                    <h5 class="card-title">Biblioteka</h5>
+                    <div class="card-body" style="text-align: center; margin: auto">
+                        <a href="{% url 'Books:upload_library' %}" class="btn btn-primary">Stwórz bibliotekę</a>
+                    </div>
+                    <div class="row" style="text-align: center; margin: auto">
+                        <a href="{% url 'Books:add_book' %}" class="btn btn-primary">Dodaj książki</a>
                     </div>
                 </div>
             {% endif %}

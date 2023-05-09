@@ -4,7 +4,7 @@
 
 {% block container %}
 
-    <h3>Dodaj książki do biblioteki</h3>
+    <h3>Stwórz bibliotekę</h3>
     <br>
     <p>Załaduj plik z książkami w formie pliku Excel:</p>
     <div>
@@ -14,18 +14,6 @@
             <input type="file" name="my_file">
             <button type="submit" class="btn btn-primary">Załaduj</button>
         </form>
-    </div>
-
-    <div>
-
-        <p>Dodaj książkę ręcznie:</p>
-
-        <form method="post" action="">
-            {% csrf_token %}
-            {{ form|crispy }}
-            <button type="submit" class="btn btn-primary">Dodaj</button>
-        </form>
-
     </div>
 
 {% endblock %}
