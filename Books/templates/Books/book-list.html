@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block container %}
+    {% if user.is_authenticated %}
+        <h1>Wszystkie książki</h1>
+
+        {% if user.is_superuser %}
+            {% for book in books %}
+                <div class="list-group">
+                    <ul class="list-group list-group-horizontal">
+                        <li class="list-group-item">{{ book.author }}</li>
+                        <li class="list-group-item">{{ book.title }}</li>
+                    </ul>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endif %}
+
+{% endblock %}

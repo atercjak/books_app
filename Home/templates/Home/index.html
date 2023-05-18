@@ -4,8 +4,9 @@
 {% block container %}
     <h1>Witaj w świecie Książkoholików</h1>
 
-    {% if user.is_authenticated %}
-        <div class="row">
+    <div class="row">
+
+        {% if user.is_authenticated %}
 
             <div class="card" style="width: 13rem;">
                 <img src="{% static 'images/user_icon.svg' %}" class="card-img-top" alt="user"
@@ -21,17 +22,30 @@
                     <img src="{% static 'images/library-icon.svg' %}" class="card-img-top" alt="library"
                          style="width: 10rem; height: 10rem; text-align: center; margin: auto">
                     <div class="card-body" style="text-align: center; margin: auto">
-                    <h5 class="card-title">Biblioteka</h5>
-                    <div class="card-body" style="text-align: center; margin: auto">
-                        <a href="{% url 'Books:upload_library' %}" class="btn btn-primary">Stwórz bibliotekę</a>
-                    </div>
-                    <div class="row" style="text-align: center; margin: auto">
-                        <a href="{% url 'Books:add_book' %}" class="btn btn-primary">Dodaj książki</a>
+                        <h5 class="card-title">Biblioteka</h5>
+                        <div class="card-body" style="text-align: center; margin: auto">
+                            <a href="{% url 'Books:upload_library' %}" class="btn btn-primary">Stwórz bibliotekę</a>
+                        </div>
+                        <div class="row" style="text-align: center; margin: auto">
+                            <a href="{% url 'Books:add_book' %}" class="btn btn-primary">Dodaj książki</a>
+                        </div>
                     </div>
                 </div>
+
+                <div class="card" style="width: 15rem;">
+                    <img src="{% static 'images/books_list.svg' %}" class="card-img-top" alt="library"
+                         style="width: 10rem; height: 10rem; text-align: center; margin: auto">
+                    <div class="card-body" style="text-align: center; margin: auto">
+                        <h5 class="card-title">Lista książek</h5>
+                        <div class="card-body" style="text-align: center; margin: auto">
+                            <a href="{% url 'Books:view_books' %}" class="btn btn-primary">Zobacz listę książek</a>
+                        </div>
+                    </div>
+
+                </div>
+
             {% endif %}
-        </div>
 
-    {% endif %}
-
+        {% endif %}
+    </div>
 {% endblock %}

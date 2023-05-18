@@ -3,6 +3,7 @@ from django.urls import reverse_lazy
 from tablib import Dataset
 from .models import Book
 from . import forms
+from django.views.generic import ListView
 
 
 def upload_library(request):
@@ -33,3 +34,9 @@ def add_book(request):
             return render(request, 'Books/add-book.html', {'form': form})
         return redirect(reverse_lazy('Home:home'))
     return render(request, 'Books/add-book.html', {'form': form})
+
+
+class ViewAllBooks(ListView):
+    model = Book
+    template_name = 'Books/book-list.html'
+    context_object_name = 'books'

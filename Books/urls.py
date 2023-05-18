@@ -7,5 +7,5 @@ app_name = 'Books'
 urlpatterns = [
     path('', views.upload_library, name='upload_library'),
     path('add', views.add_book, name='add_book'),
-
+    path('list', views.ViewAllBooks.as_view(), name='view_books'),
 ]
